@@ -4,6 +4,7 @@ metadata:
   creationTimestamp: null
   labels:
     app: sample-node-app
+    version: 1
   name: sample-node-app
 spec:
   replicas: 1
