@@ -1,17 +1,16 @@
-apiVersion: apps/v1
-kind: Deployment
+apiVersion: argoproj.io/v1alpha1
+kind: Rollout
 metadata:
   creationTimestamp: null
   labels:
     app: sample-node-app
-    version: 2
+    version: 4
   name: sample-node-app
 spec:
-  replicas: 2
+  replicas: 4
   selector:
     matchLabels:
       app: sample-node-app
-  strategy: {}
   template:
     metadata:
       creationTimestamp: null
@@ -28,3 +27,8 @@ spec:
             value: "mongodb-service"
           - name: MONGO_PORT
             value: "27017"
+  strategy:
+    blueGreen:
+      activeService: rollout-bluegreen-active
+      previewService: rollout-bluegreen-preview
+      autoPromotionEnabled: false
