@@ -4,10 +4,10 @@ metadata:
   creationTimestamp: null
   labels:
     app: sample-node-app
-    version: 2
+    version: "2"
   name: sample-node-app
 spec:
-  replicas: 2
+  replicas: 1
   selector:
     matchLabels:
       app: sample-node-app
