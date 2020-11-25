@@ -15,7 +15,7 @@ spec:
         app: sample-node-app
     spec:
       containers:
-      - image: 228722872020/sample-node-app:1.0
+      - image: 228722872020/sample-node-app:2.0
         name: sample-node-app
         ports:
         - containerPort: 3000
@@ -38,7 +38,7 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: realtimeapp-stable
+  name: realtimeapp-stable-service
   labels:
     app: sample-node-app
 spec:
